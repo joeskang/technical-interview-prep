@@ -1,20 +1,27 @@
+"""
+Runtime: 236 ms, faster than 59.78% of Python3 online submissions for Squares of a Sorted Array.
+Memory Usage: 16 MB, less than 86.42% of Python3 online submissions for Squares of a Sorted Array.
+"""
+
 class Solution:
     def sortedSquares(self, nums) -> list:
         left, right = 0, len(nums) - 1
 
-        # square each element
-        for i in range(len(nums)):
-            nums[i] = i ** 2
+        newarr = list(0 for _ in range(len(nums)))
 
-        while left < right:
-            square = nums[left]
-            while 1:
-                if nums[right] > square:
-                    right -= 1
-                else:
-                    nums = nums[1:right] + [square] + nums[right:]
-                    break
+        while left <= right:
+            if -1 * nums[left] >= nums[right]:
+                newarr[right-left] = nums[left] ** 2
+                left += 1
+            else:
+                newarr[right-left] = nums[right] ** 2
+                right -= 1
 
-        # TODO: continue
+        return newarr
 
+def test_solution():
+    sol = Solution()
+    assert sol.sortedSquares([-7, -4, 0, 2, 5]) == [0, 4, 16, 25, 49]
 
+if __name__ == "__main__":
+    test_solution()
