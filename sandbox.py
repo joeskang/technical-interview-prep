@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 class Solution:
     def threeSumClosest(self, nums, target: int) -> int:
 
@@ -32,3 +33,54 @@ class Solution:
 
 sol = Solution()
 print(sol.threeSumClosest([0,2,1,-3], 1))
+=======
+def noPrefix(words):
+    # Write your code here
+    myd = {}
+
+    for word in words:
+        # check if word exists condition
+        if word in myd:
+            print("BAD SET")
+            print(word)
+            return
+
+        substring = ''
+        for j in range(len(word)):
+            substring += word[j]
+            if substring in myd:
+                print("BAD SET")
+                print(word)
+                return
+
+        for w in myd:
+
+
+        myd[word] = True
+
+    print("GOOD SET")
+    return
+
+
+if __name__ == '__main__':
+    words =[
+        'hgiiccfchbeadgebc',
+        'biiga',
+        'edchgb',
+        'ccfdbeajaeid',
+        'ijgbeecjbj',
+        'bcfbbacfbfcfbhcbfjafibfhffac',
+        'ebechbfhfcijcjbcehbgbdgbh',
+        'ijbfifdbfifaidje',
+        'acgffegiihcddcdfjhhgadfjb',
+        'ggbdfdhaffhghbdh',
+        'dcjaichjejgheiaie',
+        'd',
+        'jeedfch',
+        'ahabicdffbedcbdeceed',
+        'fehgdfhdiffhegafaaaiijceijdgbb',
+        'dbeedfdjaghbhgdhcedcj',
+        "decjacchhaciafafdgha",
+    ]
+    noPrefix(words)
+>>>>>>> Stashed changes
