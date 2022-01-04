@@ -1,24 +1,34 @@
 class Solution:
-    def maxArea(self, height) -> int:
-        volumes = {}
-        left, right = 0, len(height) - 1
-        volume = (right - left) * min(height[left], height[right])
-        volumes[volume] = (left, right)
-        while left < right:
-            if height[right] < height[left]:
+    def threeSumClosest(self, nums, target: int) -> int:
 
-                right -= 1
+        closest = None
+        '''
+        for l in range(len(nums) - 2):
+            for m in range(l+1, len(nums)-1):
+                for r in range(m+1, len(nums)):
+                    sum_ = nums[l] + nums[m] + nums[r]
+                    if closest is None or abs(sum_ - target) < closest:
+                        closest = sum_
+                    if closest == 0:
+                        break
+        '''
+        nums.sort()
+        for l in range(len(nums)):
+            m, r = l + 1, len(nums) - 1
+            while m < r:
 
-            else:
-                left += 1
+                sum_ = nums[l] + nums[m] + nums[r]
+                if closest is None or abs(target - sum_) < abs(target - closest):
+                    closest = sum_
+                if sum_ > target:
+                    r -= 1
+                else:
+                    m += 1
 
-            volume = (right - left) * min(height[left], height[right])
+                if sum_ == target:
+                    break
 
-            volumes[volume] = (left, right)
+        return closest
 
-        return max(list(volumes.keys()))
-
-
-if __name__ == "__main__":
-    sol = Solution()
-    print(sol.maxArea([1,8,6,2,5,4,8,3,7]))
+sol = Solution()
+print(sol.threeSumClosest([0,2,1,-3], 1))
