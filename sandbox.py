@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class Solution:
     def threeSumClosest(self, nums, target: int) -> int:
 
@@ -61,6 +62,35 @@ def noPrefix(words):
     print("GOOD SET")
     return
 
+=======
+def noPrefix(words):
+    # Write your code here
+    myd = {}
+
+    for word in words:
+        # check if word exists condition
+        if word in myd:
+            print("BAD SET")
+            print(word)
+            return
+
+        substring = ''
+        for j in range(len(word)):
+            substring += word[j]
+            if substring in myd:
+                print("BAD SET")
+                print(word)
+                return
+
+        for w in myd:
+
+
+        myd[word] = True
+
+    print("GOOD SET")
+    return
+
+>>>>>>> Stashed changes
 
 if __name__ == '__main__':
     words =[
@@ -83,4 +113,7 @@ if __name__ == '__main__':
         "decjacchhaciafafdgha",
     ]
     noPrefix(words)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
