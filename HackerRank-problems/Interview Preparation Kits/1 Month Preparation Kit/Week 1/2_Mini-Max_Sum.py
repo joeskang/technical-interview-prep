@@ -1,4 +1,8 @@
 #!/bin/python3
+"""
+forgot to time this one
+Date = June 07, 2022
+"""
 
 import math
 import os
