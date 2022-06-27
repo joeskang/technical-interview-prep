@@ -1,3 +1,7 @@
+"""
+date: 06/26/2022
+"""
+
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         # quick and easy naive approach
