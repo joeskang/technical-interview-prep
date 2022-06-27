@@ -22,6 +22,7 @@ class Solution:
         
         smallest = largest = None
         result = 0
-        while 1:    
+        while 1:
+
             for k, v in myd.items():
-                if
+                pass
