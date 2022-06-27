@@ -10,7 +10,7 @@ class Solution:
             if zero_count > 1:
                 for _ in range(len(nums)):
                     nums[_] = 0
-                return
+                return nums
 
             single_zero_index = nums.index(0)
 
