@@ -31,10 +31,35 @@ class Solution:
 
         prehead = Node(-1)
         prehead.next = head
+        # node emulation with dictionary
         orig_node_dict = {}  # keys: memory location, values: [node.val, node.next, node.random]
         new_node_dict = {}
+        new_root = Node(-1)
+        new_head = None
 
+        # copy nodes with orig_node_dict
         while head is not None:
-            orig_node_dict[id(head)] = [head.val, id(head.next), id(head.random)]
+            next_ = head.next
+            random_ = head.random
+            orig_node_dict[id(head)] = [head.val, id(next_) if next_ is not None else None,
+                                        id(random_) if random_ is not None else None]
             new_node = Node(-1)
-            new_node_dict
+            new_node_dict[id(head)] = new_node
+            head = head.next
+
+        head = prehead.next
+        # assign next and random
+        while head is not None:
+
+            new_head = new_node_dict[id(head)]
+
+            if new_root.next is None:
+                new_root.next = new_head
+            # get next from old to refer to new
+            val, next_, random_ = orig_node_dict[id(head)]
+            new_head.val = val
+            new_head.next = new_node_dict[next_] if next_ is not None else None
+            new_head.random = new_node_dict[random_] if random_ is not None else None
+            head = head.next
+
+        return new_root.next
