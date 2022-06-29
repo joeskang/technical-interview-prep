@@ -1,15 +1,17 @@
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
-    def zigzagLevelOrder(self, root: TreeNode):
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # account for null edgecase
+        if not root:
+            return []
         node_list = [root]
         values_list = []
-        left_to_right = False  # the first generation is right to left
+        left_to_right = True  # the first generation is right to left
 
         # generational loop
         while node_list:
@@ -39,13 +41,12 @@ class Solution:
 
             if not left_to_right:
                 temp_nodes = temp_nodes[::-1]
-                generation_values = generation_values[::-1]
+                # generation_values = generation_values[::-1]
 
             left_to_right = not left_to_right
             node_list = temp_nodes
             values_list += [generation_values]
         return values_list
-
 
 if __name__ == "__main__":
     sol = Solution()
