@@ -9,4 +9,4 @@ def superDigit(n, k):
             n *= k
             concatenated = True
 
-    return
+    return n
