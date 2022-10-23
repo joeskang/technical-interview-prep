@@ -1,4 +1,17 @@
-# Technical Interview Problems
-My attempt at solving various technical interview problems from sources such at LeetCode, HackerRank, or CodeSignal.
+# Technical Interview Preparations
+This is my dump for all the problems that I have solved to prepare for technical interviews
 
-Due to potential copyright infringement, questions are not included. Only my attempts have been provided.
+Almost all attempts are written in Python. For copyright reasons, the questions themselves have been omitted.
+
+## The organization of the repo:
+* Blind 75
+* Books
+  * Elements of Programming Interviews
+    * Python
+* Code Signal
+* HackerRank
+* LeetCode
+* Misc
+
+Almost all attempts are written in Python. For copyright reasons, the questions themselves have been omitted.
+
