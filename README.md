@@ -12,3 +12,6 @@ Almost all attempts are written in Python. For copyright reasons, the questions 
 * HackerRank
 * LeetCode
 * Misc
+
+Almost all attempts are written in Python. For copyright reasons, the questions themselves have been omitted.
+
