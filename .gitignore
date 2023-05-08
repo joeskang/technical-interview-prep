@@ -3,3 +3,4 @@
 .pytest_cache/
 Pipfile.lock
 venv/
+*.ipynb_checkpoints*
