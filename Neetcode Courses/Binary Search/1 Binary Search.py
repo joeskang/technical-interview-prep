@@ -5,7 +5,7 @@ https://leetcode.com/problems/binary-search/
 
 def search(nums: list, target: int) -> int: # returns the index
 
-    l,r = 0, len(nums) - 1
+    l, r = 0, len(nums) - 1
 
     while l < r:
         m = l + ((r - l) // 2)
