@@ -4,3 +4,4 @@
 Pipfile.lock
 venv/
 *.ipynb_checkpoints*
+temp/
